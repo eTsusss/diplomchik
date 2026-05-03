@@ -1,0 +1,29 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="url(#bg)"/>
+  <circle cx="170" cy="130" r="90" fill="#FFF4E6" fill-opacity="0.9"/>
+  <circle cx="1030" cy="620" r="120" fill="#D7ECE6"/>
+  <rect x="92" y="470" width="1016" height="42" rx="21" fill="#D5C4B0"/>
+  <path d="M234 434H770L830 300H1000C1032 300 1058 326 1058 358V434H1100V470H234V434Z" fill="#D46534"/>
+  <path d="M236 430H738L792 218H558C533 218 510 231 495 253L400 392C386 414 362 428 336 430H236Z" fill="#F0B038"/>
+  <rect x="824" y="320" width="170" height="84" rx="20" fill="#F9F5EF"/>
+  <rect x="842" y="338" width="62" height="48" rx="12" fill="#BFE0E5"/>
+  <rect x="914" y="338" width="62" height="48" rx="12" fill="#BFE0E5"/>
+  <path d="M356 232H718L692 350H282L356 232Z" fill="#F7C868"/>
+  <path d="M412 232L360 350" stroke="#996C1D" stroke-width="10" stroke-linecap="round"/>
+  <path d="M530 232L482 350" stroke="#996C1D" stroke-width="10" stroke-linecap="round"/>
+  <path d="M648 232L604 350" stroke="#996C1D" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="384" cy="492" r="76" fill="#2A2D31"/>
+  <circle cx="384" cy="492" r="38" fill="#D9DFE3"/>
+  <circle cx="916" cy="492" r="76" fill="#2A2D31"/>
+  <circle cx="916" cy="492" r="38" fill="#D9DFE3"/>
+  <rect x="216" y="420" width="66" height="18" rx="9" fill="#8F3A1D"/>
+  <rect x="1042" y="420" width="58" height="18" rx="9" fill="#8F3A1D"/>
+  <text x="104" y="104" fill="#8F3A1D" font-family="Arial, sans-serif" font-size="38" font-weight="700">Открытая газель</text>
+  <text x="104" y="154" fill="#4F4740" font-family="Arial, sans-serif" font-size="22">Перевозка стройматериалов и крупного груза</text>
+  <defs>
+    <linearGradient id="bg" x1="82" y1="54" x2="1090" y2="684" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8EF"/>
+      <stop offset="1" stop-color="#F1E3CF"/>
+    </linearGradient>
+  </defs>
+</svg>

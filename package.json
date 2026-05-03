@@ -1,0 +1,14 @@
+{
+  "name": "gazel-express",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "python3 server.py",
+    "start:4000": "python3 server.py --port 4000",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up -d --build",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f --tail=100",
+    "deploy": "bash scripts/deploy.sh"
+  }
+}

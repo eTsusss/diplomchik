@@ -1,0 +1,15 @@
+[Unit]
+Description=Gazel Express site
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/gazel-express
+ExecStart=/usr/bin/python3 /var/www/gazel-express/server.py --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=3
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target

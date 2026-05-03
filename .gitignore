@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+*.log
+
+.idea/
+.vscode/
+node_modules/
+
+data/*.db
+data/*.sqlite
+data/*.sqlite3

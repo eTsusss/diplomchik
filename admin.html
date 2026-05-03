@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Локальная админ-панель Газель Экспресс для входа администраторов, просмотра заявок и управления аккаунтами.">
+  <title>Админ-панель | Газель Экспресс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img class="logo-image" src="assets/site-logo.svg" alt="Логотип Газель Экспресс">
+        <span class="logo-text">Газель Экспресс</span>
+      </a>
+
+      <div class="admin-header-actions">
+        <a class="button button-contrast" href="index.html">Вернуться на сайт</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-secondary admin-auth-shell" id="adminAuthShell">
+      <div class="container admin-auth-layout admin-auth-layout-single">
+        <article class="admin-auth-card" id="loginView" hidden>
+          <p class="eyebrow">Вход</p>
+          <h1>Войти в админ-панель</h1>
+          <p>
+            Используйте логин и пароль администратора, чтобы открыть список заявок,
+            управлять аккаунтами и менять пароли.
+          </p>
+
+          <form class="admin-form" id="loginForm">
+            <label>
+              Логин
+              <input type="text" name="login" autocomplete="username" required>
+            </label>
+
+            <label>
+              Пароль
+              <input type="password" name="password" autocomplete="current-password" required>
+            </label>
+
+            <button class="button button-primary" type="submit">Войти</button>
+          </form>
+
+          <div class="admin-feedback" id="loginMessage" hidden></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section admin-dashboard" id="adminDashboard" hidden>
+      <div class="container">
+        <div class="admin-toolbar">
+          <div>
+            <p class="eyebrow">Админ-панель</p>
+            <h1>Управление заявками и аккаунтами</h1>
+            <p class="admin-toolbar-text" id="sessionInfo"></p>
+          </div>
+
+          <div class="admin-toolbar-actions">
+            <a class="button button-contrast" href="index.html">Открыть сайт</a>
+            <button class="button button-primary" id="logoutButton" type="button">Выйти</button>
+          </div>
+        </div>
+
+        <div class="admin-stats-grid">
+          <article class="admin-stat-card">
+            <p>Всего заявок</p>
+            <strong id="totalOrders">0</strong>
+          </article>
+
+          <article class="admin-stat-card">
+            <p>За сегодня</p>
+            <strong id="todayOrders">0</strong>
+          </article>
+
+          <article class="admin-stat-card">
+            <p>Аккаунтов</p>
+            <strong id="accountsCount">0</strong>
+          </article>
+        </div>
+
+        <div class="admin-main-grid">
+          <section class="admin-panel-card">
+            <div class="admin-section-head">
+              <div>
+                <p class="eyebrow">Заявки</p>
+                <h2>Все заявки с формы сайта</h2>
+              </div>
+              <div class="admin-section-actions">
+                <span class="admin-count-pill" id="ordersCountBadge">0 заявок</span>
+                <a class="button button-contrast admin-export-button" id="exportExcelButton" href="/api/export/orders.xlsx">Выгрузить Excel</a>
+              </div>
+            </div>
+
+            <div class="admin-orders-toolbar">
+              <div class="admin-order-filters">
+                <label>
+                  Поступила с
+                  <input type="date" id="ordersDateFrom">
+                </label>
+
+                <label>
+                  Поступила по
+                  <input type="date" id="ordersDateTo">
+                </label>
+
+                <button class="button button-contrast admin-filter-reset" id="resetOrdersFilterButton" type="button">Сбросить</button>
+              </div>
+
+              <p class="admin-order-filters-note">Фильтр применяется к дате поступления заявки в админ-панель.</p>
+            </div>
+
+            <div class="admin-feedback" id="ordersMessage" hidden></div>
+
+            <div class="admin-orders-section">
+              <div class="admin-orders-group">
+                <div class="admin-subsection-head">
+                  <h3>Активные заявки</h3>
+                </div>
+
+                <div class="admin-orders-list" id="ordersList"></div>
+              </div>
+
+              <div class="admin-orders-group admin-archive-section">
+                <div class="admin-subsection-head">
+                  <h3>Архив</h3>
+                  <span class="admin-count-pill" id="archivedOrdersCountBadge">0 заявок</span>
+                </div>
+
+                <div class="admin-orders-list" id="archivedOrdersList"></div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="admin-side-grid">
+            <section class="admin-panel-card">
+              <div class="admin-section-head">
+                <div>
+                  <p class="eyebrow">Новый аккаунт</p>
+                  <h2>Создать администратора</h2>
+                </div>
+              </div>
+
+              <form class="admin-form admin-form-compact" id="createAccountForm">
+                <label>
+                  Логин
+                  <input type="text" name="login" minlength="3" required>
+                </label>
+
+                <label>
+                  Пароль
+                  <input type="password" name="password" minlength="6" required>
+                </label>
+
+                <button class="button button-primary" type="submit">Создать аккаунт</button>
+              </form>
+
+              <div class="admin-feedback" id="createAccountMessage" hidden></div>
+            </section>
+
+            <section class="admin-panel-card">
+              <div class="admin-section-head">
+                <div>
+                  <p class="eyebrow">Пароль</p>
+                  <h2>Сменить пароль</h2>
+                </div>
+              </div>
+
+              <form class="admin-form admin-form-compact" id="changePasswordForm">
+                <label>
+                  Аккаунт
+                  <select name="login" id="passwordAccount" required></select>
+                </label>
+
+                <label>
+                  Новый пароль
+                  <input type="password" name="password" minlength="6" required>
+                </label>
+
+                <button class="button button-primary" type="submit">Обновить пароль</button>
+              </form>
+
+              <div class="admin-feedback" id="passwordMessage" hidden></div>
+            </section>
+
+            <section class="admin-panel-card">
+              <div class="admin-section-head">
+                <div>
+                  <p class="eyebrow">Список аккаунтов</p>
+                  <h2>Активные администраторы</h2>
+                </div>
+              </div>
+
+              <div class="admin-accounts-list" id="accountsList"></div>
+              <div class="admin-feedback" id="accountsMessage" hidden></div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="site-data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

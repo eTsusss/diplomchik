@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Коммерческий лендинг по грузоперевозкам: заказ открытой и закрытой газели, выбор даты и времени подачи, заявка с контактами заказчика.">
+  <title>Газель Экспресс | Грузоперевозки</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img class="logo-image" src="assets/site-logo.svg" alt="Логотип Газель Экспресс">
+        <span class="logo-text">Газель Экспресс</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Меню
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a class="active" href="index.html">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-primary">
+      <div class="container">
+        <div class="hero-shell">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">Грузоперевозки по городу и области</p>
+              <h1>Оформите заказ машины под ваш груз и точное время подачи</h1>
+              <p class="hero-text">
+                Сервис подходит для перевозки мебели, техники, стройматериалов и личных вещей.
+                Клиент сразу выбирает тип кузова, указывает груз и ставит точное время подачи машины.
+              </p>
+
+              <div class="hero-actions">
+                <a class="button button-primary" href="#order-form">Заказать машину</a>
+                <a class="button button-secondary button-contrast" href="contacts.html">Контакты для связи</a>
+              </div>
+
+              <ul class="hero-chips">
+                <li>До 1500 кг</li>
+                <li>Открытый и закрытый кузов</li>
+                <li>Дата и время подачи</li>
+                <li>Быстрое подтверждение заказа</li>
+              </ul>
+            </div>
+
+            <aside class="hero-card" aria-label="Что можно указать в заявке">
+              <p class="eyebrow eyebrow-muted">Заявка за пару минут</p>
+              <h2>Что клиент заполняет сразу</h2>
+
+              <div class="hero-mini-grid">
+                <article class="mini-feature">
+                  <img class="card-icon" src="assets/icon-contact.svg" alt="">
+                  <h3>Контакты заказчика</h3>
+                  <p>Имя и номер для обратной связи без дополнительных шагов.</p>
+                </article>
+
+                <article class="mini-feature">
+                  <img class="card-icon" src="assets/icon-box.svg" alt="">
+                  <h3>Какой груз перевозить</h3>
+                  <p>Описание груза в свободной форме прямо в заявке.</p>
+                </article>
+
+                <article class="mini-feature">
+                  <img class="card-icon" src="assets/icon-open-body.svg" alt="">
+                  <h3>Тип кузова</h3>
+                  <p>Открытая или закрытая газель в зависимости от задачи.</p>
+                </article>
+
+                <article class="mini-feature">
+                  <img class="card-icon" src="assets/icon-calendar.svg" alt="">
+                  <h3>Дата и время</h3>
+                  <p>Выбор подачи через встроенный календарь и время.</p>
+                </article>
+              </div>
+            </aside>
+          </div>
+
+          <div class="hero-service-row">
+            <article class="service-strip-card">
+              <img class="strip-icon" src="assets/icon-route.svg" alt="">
+              <div>
+                <strong>Чёткая логика заказа</strong>
+                <span>От формы до подтверждения без перегруженного интерфейса</span>
+              </div>
+            </article>
+
+            <article class="service-strip-card">
+              <img class="strip-icon" src="assets/icon-clock.svg" alt="">
+              <div>
+                <strong>Подача ко времени</strong>
+                <span>Клиент сразу указывает удобный день и точное время</span>
+              </div>
+            </article>
+
+            <article class="service-strip-card">
+              <img class="strip-icon" src="assets/icon-shield.svg" alt="">
+              <div>
+                <strong>Понятный выбор машины</strong>
+                <span>Подсказки по типу кузова и грузоподъёмности</span>
+              </div>
+            </article>
+
+            <article class="service-strip-card">
+              <img class="strip-icon" src="assets/icon-phone.svg" alt="">
+              <div>
+                <strong>Контакты всегда рядом</strong>
+                <span>Телефон и мессенджеры вынесены в подвал сайта</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Преимущества</p>
+          <h2>Почему клиенту удобно оформить перевозку именно на сайте</h2>
+          <p>
+            Вся основная информация собрана на одной странице: условия перевозки, тип кузова, форма заявки
+            и быстрый переход к контактам владельца машины.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <img class="card-icon" src="assets/icon-route.svg" alt="">
+            <h3>Быстрый выбор услуги</h3>
+            <p>Сразу понятно, какую машину можно заказать и какие данные нужно указать в заявке.</p>
+          </article>
+
+          <article class="service-card">
+            <img class="card-icon" src="assets/icon-warehouse.svg" alt="">
+            <h3>Подходит для разных грузов</h3>
+            <p>На сайте можно оформить перевозку мебели, техники, стройматериалов и коробок с вещами.</p>
+          </article>
+
+          <article class="service-card">
+            <img class="card-icon" src="assets/icon-clock.svg" alt="">
+            <h3>Точное время подачи</h3>
+            <p>Клиент сразу выбирает дату и время, чтобы машина приехала к нужному моменту.</p>
+          </article>
+
+          <article class="service-card">
+            <img class="card-icon" src="assets/icon-shield.svg" alt="">
+            <h3>Простой сценарий заказа</h3>
+            <p>Заявка оформляется без лишних переходов и помогает быстрее подтвердить перевозку.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-heading section-heading-split">
+          <div>
+            <p class="eyebrow">Типы кузова</p>
+            <h2>Выберите кузов под ваш груз</h2>
+          </div>
+        </div>
+
+        <div class="solutions-grid">
+          <article class="solution-card">
+            <div class="solution-head">
+              <img class="card-icon large" src="assets/icon-open-body.svg" alt="">
+              <div>
+                <p class="eyebrow">Открытая газель</p>
+                <h3>Для стройматериалов, оборудования и длинных грузов</h3>
+              </div>
+            </div>
+            <p>Подходит, когда нужен быстрый доступ к кузову и перевозка крупногабаритного груза.</p>
+            <ul class="feature-list">
+              <li>Грузоподъёмность до 1500 кг</li>
+              <li>Удобна для тяжёлых и длинных позиций</li>
+              <li>Подходит для стройки и оборудования</li>
+            </ul>
+          </article>
+
+          <article class="solution-card solution-card-accent">
+            <div class="solution-head">
+              <img class="card-icon large" src="assets/icon-box-body.svg" alt="">
+              <div>
+                <p class="eyebrow">Закрытая газель</p>
+                <h3>Для мебели, коробок, техники и защищённой доставки</h3>
+              </div>
+            </div>
+            <p>Выбор для грузов, которые важно закрыть от дождя, ветра и дорожной пыли.</p>
+            <ul class="feature-list">
+              <li>Грузоподъёмность до 1200 кг</li>
+              <li>Подходит для домашнего и офисного переезда</li>
+              <li>Лучше для аккуратной городской доставки</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section order-section" id="order-form">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Форма заказа</p>
+          <h2>Оставьте заявку на перевозку</h2>
+          <p>Укажите контактные данные, тип кузова, описание груза и удобное время подачи, чтобы быстрее получить подтверждение.</p>
+        </div>
+
+        <div class="order-layout">
+          <form class="order-form" id="transportForm">
+            <div class="form-grid">
+              <label>
+                Контакты заказчика
+                <input type="text" name="customer" placeholder="Имя заказчика" required>
+              </label>
+
+              <label>
+                Номер для обратной связи
+                <input type="tel" name="phone" id="phoneInput" inputmode="numeric" placeholder="+7 (999) 123-45-67" maxlength="18" pattern="\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+              </label>
+
+              <label>
+                Выберите газель
+                <select name="truckType" required>
+                  <option value="">Выберите вариант</option>
+                  <option value="Открытая газель, до 1500 кг">Открытая газель, до 1500 кг</option>
+                  <option value="Закрытая газель, до 1200 кг">Закрытая газель, до 1200 кг</option>
+                </select>
+              </label>
+
+              <label>
+                Дата и время подачи
+                <input type="datetime-local" name="dateTime" required>
+              </label>
+
+              <label class="full-width">
+                Какой груз надо перевезти
+                <textarea name="cargo" id="cargoField" rows="5" placeholder="Например: диван, коробки с вещами, 15 мешков цемента" required></textarea>
+              </label>
+
+              <article class="form-helper full-width">
+                <div class="form-helper-header">
+                  <img class="card-icon form-helper-icon" src="assets/icon-route.svg" alt="">
+                  <div>
+                    <strong>Что ещё можно указать в заявке</strong>
+                    <p>Эти детали помогают быстрее подтвердить заказ и сразу подобрать подходящую машину.</p>
+                  </div>
+                </div>
+
+                <div class="form-helper-chips">
+                  <span>Адрес подачи</span>
+                  <span>Куда доставить груз</span>
+                  <span>Нужна ли помощь с погрузкой</span>
+                  <span>Этаж, лифт или пропуск</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">Отправить заявку</button>
+              <p class="form-note">После отправки появится уведомление об успешной отправке.</p>
+            </div>
+          </form>
+
+          <aside class="order-sidebar">
+            <article class="sidebar-card">
+              <div class="sidebar-header">
+                <img class="card-icon" src="assets/icon-shield.svg" alt="">
+                <h3>Что лучше указать заранее</h3>
+              </div>
+              <ul class="sidebar-list">
+                <li>Тип груза и примерный объём</li>
+                <li>Нужен ли открытый или закрытый кузов</li>
+                <li>Точная дата и время подачи машины</li>
+                <li>Номер, по которому удобно подтвердить заявку</li>
+              </ul>
+            </article>
+
+            <article class="sidebar-card">
+              <div class="sidebar-header">
+                <img class="card-icon" src="assets/icon-phone.svg" alt="">
+                <h3>Как происходит подтверждение</h3>
+              </div>
+              <p>После заявки владелец связывается с клиентом, уточняет адрес, маршрут и окончательно подтверждает заказ.</p>
+              <div class="confirm-flow" aria-label="Этапы подтверждения">
+                <div class="confirm-flow-step">
+                  <span>01</span>
+                  <strong>Заявка</strong>
+                </div>
+                <div class="confirm-flow-step">
+                  <span>02</span>
+                  <strong>Звонок</strong>
+                </div>
+                <div class="confirm-flow-step">
+                  <span>03</span>
+                  <strong>Подтверждение</strong>
+                </div>
+              </div>
+              <div class="contact-stack">
+                <a class="contact-chip" href="tel:+79991234567">+7 (999) 123-45-67</a>
+                <a class="contact-chip" href="contacts.html">Telegram</a>
+                <a class="contact-chip" href="contacts.html">MAX</a>
+              </div>
+            </article>
+          </aside>
+        </div>
+
+        <div class="form-result" id="formResult" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="success-popup-backdrop" id="successPopup" hidden>
+    <div class="success-popup-card" role="alertdialog" aria-modal="true" aria-labelledby="successPopupTitle" aria-describedby="successPopupText">
+      <span class="success-popup-badge">Успешно</span>
+      <h2 id="successPopupTitle">Заявка отправлена</h2>
+      <p id="successPopupText">Можно закрыть окно и оформить следующую перевозку.</p>
+      <button class="button button-primary" id="successPopupClose" type="button">Понятно</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-top-label">Для связи писать:</div>
+      <div class="footer-contact-links">
+        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+        <a class="footer-brand-link" href="contacts.html"><img src="assets/telegram-official.svg" alt="">Telegram</a>
+        <a class="footer-brand-link" href="contacts.html"><img src="assets/max-official.svg" alt="">MAX</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html">Газель Экспресс</a>
+      </div>
+
+      <nav aria-label="Навигация в подвале">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="site-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
