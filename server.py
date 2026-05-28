@@ -1,4 +1,5 @@
 import argparse
+import os
 import datetime as dt
 import hashlib
 import html
@@ -852,7 +853,7 @@ class AppHandler(SimpleHTTPRequestHandler):
 def main():
     parser = argparse.ArgumentParser(description="Газель Экспресс: локальный сервер с SQLite")
     parser.add_argument("--host", default="0.0.0.0")
-    parser.add_argument("--port", type=int, default=8000)
+    parser.add_argument("--port", type=int, default=int(os.environ.get("PORT", "8000")))
     parser.add_argument("--init-db", action="store_true")
     parser.add_argument("--create-admin", nargs=2, metavar=("LOGIN", "PASSWORD"))
     args = parser.parse_args()
