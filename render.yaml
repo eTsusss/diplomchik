@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: diplomchik
+    name: gazel-express
     runtime: docker
     plan: free
     dockerfilePath: ./Dockerfile
