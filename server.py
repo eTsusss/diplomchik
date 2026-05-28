@@ -320,12 +320,48 @@ def create_admin_record(connection, login, password):
     )
 
 
+PAGE_ALIASES = {
+    "/": "/index.html",
+    "/about": "/about.html",
+    "/contacts": "/contacts.html",
+    "/admin": "/admin.html",
+}
+
+
+def normalize_public_path(path):
+    path = unquote(path or "/")
+
+    if not path.startswith("/"):
+        path = f"/{path}"
+
+    if path != "/" and path.endswith("/"):
+        path = path.rstrip("/") or "/"
+
+    if path in PAGE_ALIASES:
+        return PAGE_ALIASES[path]
+
+    if path.startswith("/api/"):
+        return path
+
+    if Path(path).name and "." not in Path(path).name:
+        candidate = f"{path}.html"
+        if (BASE_DIR / candidate.lstrip("/")).is_file():
+            return candidate
+
+    return path
+
+
 class AppHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(BASE_DIR), **kwargs)
 
+    def list_directory(self, path):
+        self.send_error(HTTPStatus.NOT_FOUND, "Not Found")
+        return None
+
     def do_GET(self):
-        path = urlparse(self.path).path
+        parsed = urlparse(self.path)
+        path = parsed.path
 
         if path == "/api/bootstrap":
             self.handle_bootstrap()
@@ -347,6 +383,17 @@ class AppHandler(SimpleHTTPRequestHandler):
             self.handle_export_excel()
             return
 
+        if path.startswith("/api/"):
+            self.send_json({"message": "Маршрут не найден."}, HTTPStatus.NOT_FOUND)
+            return
+
+        if path == "/favicon.ico":
+            self.send_response(HTTPStatus.NO_CONTENT)
+            self.end_headers()
+            return
+
+        path = normalize_public_path(path)
+        self.path = f"{path}?{parsed.query}" if parsed.query else path
         super().do_GET()
 
     def do_POST(self):
