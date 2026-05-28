@@ -21,8 +21,8 @@ docker compose up --build
 
 После запуска через Docker сайт будет доступен по адресу:
 
-- `http://localhost:3010`
-- админ-панель: `http://localhost:3010/admin.html`
+- `http://localhost:3011`
+- админ-панель: `http://localhost:3011/admin.html`
 
 База данных проброшена как локальная папка `data`, поэтому заявки и администраторы сохраняются между перезапусками контейнера.
 
@@ -42,10 +42,10 @@ cd gazel-express
 docker compose up -d --build
 ```
 
-После запуска сайт будет доступен на порту `3010`:
+После запуска сайт будет доступен на порту `3011`:
 
-- `http://IP_СЕРВЕРА:3010`
-- админ-панель: `http://IP_СЕРВЕРА:3010/admin.html`
+- `http://IP_СЕРВЕРА:3011`
+- админ-панель: `http://IP_СЕРВЕРА:3011/admin.html`
 
 Если на сервере ещё нет администратора:
 
@@ -81,10 +81,31 @@ DEPLOY_HOST=IP_СЕРВЕРА DEPLOY_USER=root DEPLOY_PORT=2222 npm run deploy
 DEPLOY_HOST=IP_СЕРВЕРА DEPLOY_USER=root DEPLOY_INCLUDE_DATA=1 npm run deploy
 ```
 
-После деплоя сайт будет работать на сервере на порту `3010`:
+После деплоя сайт будет работать на сервере на порту `3011`:
 
-- `http://IP_СЕРВЕРА:3010`
-- админ-панель: `http://IP_СЕРВЕРА:3010/admin.html`
+- `http://IP_СЕРВЕРА:3011`
+- админ-панель: `http://IP_СЕРВЕРА:3011/admin.html`
+
+## Деплой на `exclusivegu.ru`
+
+Для текущего сервера и папки проекта:
+
+```bash
+DEPLOY_HOST=45.11.92.25 DEPLOY_USER=root DEPLOY_PATH=/root/diplom-katia/diplom npm run deploy
+```
+
+Если домен подключается через Nginx Proxy Manager, создайте `Proxy Host`:
+
+- Domain Names: `exclusivegu.ru`, `www.exclusivegu.ru`
+- Scheme: `http`
+- Forward Hostname / IP: `45.11.92.25`
+- Forward Port: `3011`
+- SSL: выпустить Let's Encrypt-сертификат, включить `Force SSL`
+
+В DNS-панели домена должны быть записи:
+
+- `A` для `exclusivegu.ru` -> `45.11.92.25`
+- `A` для `www.exclusivegu.ru` -> `45.11.92.25` или `CNAME` для `www` -> `exclusivegu.ru`
 
 ## Где хранятся данные
 
